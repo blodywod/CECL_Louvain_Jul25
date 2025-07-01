@@ -15,7 +15,7 @@ A multi-L1 learner corpus of Spanish as a foreign language that includes spoken 
 #### Corpus of Written Spanish of L2 and Heritage Speakers (COWS-L2H) (accessed 2025-02-23)
 
 ## Objectives
-- To analyze the linguistic design of task prompts across five Spanish L2 corpora.
+- To analyze the linguistic design of task prompts across five L2 Spanish corpora.
 - To identify and classify task types based on linguistic complexity indicators using quantitative methods.
 
 ## Research questions
