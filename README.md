@@ -20,8 +20,8 @@ A multi-L1 learner corpus of Spanish as a foreign language that includes spoken 
 
 ## Research questions
 1. What type of task prompts are most frequently used across the five L2 Spanish corpora?
-2. What linguistic features characterize the task prompts, and how can they be grouped systematically? 
-3. What potential does task prompt design have to reflect variation in communicative register?
+2. What linguistic features do task prompts have overall, and how can they be systematically classified into types based on complexity? 
+3. How does the linguistic complexity of task prompts vary across different L2 Spanish corpora?
 
 ## Methodology
 1. Data preparation: Extraction of all task prompts and metadata (e.g., task type, modality, time/length/resources limits, corpus population, L1, participant number). Translation of all prompts to Spanish.
