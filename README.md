@@ -1,9 +1,10 @@
 # What Are We Really Asking? A Corpus-Based Study of Task Design in Spanish L2 Writing 
-### VAR4LCR Congress - July 2025
-This repository contains the code, data, and analysis for the study "What Are We Really Asking? A Corpus-Based Study of Task Design in Spanish L2 Writing", presented at the VAR4LCR Congress on July 7th, 2025. The research explores the linguistic characteristics of writing task prompts across five open-access Spanish L2 learner corpora, with the aim of systematically classifying them based on linguistic complexity indicators. This study combines learner corpus research (LCR) with quantitative, corpus-based methods and unsupervised learning techniques. 
+### VAR4LCR Conference - July 2025
+### Project summary
+This repository contains the code, data, and analysis for the study "What Are We Really Asking? A Corpus-Based Study of Task Design in Spanish L2 Writing", presented at the VAR4LCR Congress on July 7th, 2025. The study investigates the linguistic design of writing task prompts in five open-access Spanish L2 learner corpora. By applying quantitative corpus-based methods and unsupervised learning (PCA and clustering), it systematically classifies prompts according to linguistic complexity. Bridging learner corpus research and NLP, the study highlights that even the prompts themselves shape learner performance through their linguistic demands. By making these task characteristics visible, we move toward more transparent and standardized task design—laying the groundwork for more valid, interpretable, and comparable learner data in L2 research.
   
 ## L2 SPANISH CORPORA
-We selected five open-access L2 Spanish corpora that include written compositions along with their associated task prompts.
+I selected five open-access written L2 Spanish corpora that include written compositions along with their associated task prompts.
 #### Corpus Escrito del Español L2 (CEDEL2) v2.1 (accessed 2025-06-23)
 A multi-L1 learner corpus of Spanish as a foreign language that includes spoken and written compositions from learners at various proficiency levels and native control subcorpora. The corpus contains 4,334 compositions, 25 variables and 16 subcorpora—11 learner subcorpora and 5 native control subcorpora. 
 #### Corpus de Textos Escritos por Universitarios Taiwaneses Estudiantes de Español
@@ -19,9 +20,9 @@ A multi-L1 learner corpus of Spanish as a foreign language that includes spoken 
 - To identify and classify task types based on linguistic complexity indicators using quantitative methods.
 
 ## Research questions
-1. What type of task prompts are most frequently used across the five L2 Spanish corpora?
-2. What linguistic features do task prompts have overall, and how can they be systematically classified into types based on complexity? 
-3. How does the linguistic complexity of task prompts vary across different L2 Spanish corpora?
+RQ1: How can we systematically classify/group task prompts by linguistic complexity?
+RQ2: What types of task prompts are most frequently used across the five L2 Spanish corpora? 
+RQ3: How does the linguistic complexity of task prompts vary across different task groups?
 
 ## Methodology
 1. Data preparation: Extraction of all task prompts and metadata (e.g., task type, modality, time/length/resources limits, corpus population, L1, participant number). Translation of all prompts to Spanish.
@@ -37,25 +38,43 @@ Syntactic complexity: mean sentence length, clause density, subordination ratio,
 6. Visualization: Normalized PCA scores (range -1 to 1) used to generate radar plots showing average linguistic profiles for each task group.
 
 ## Results
-1. Cluster distribution
+#### RQ1: How can we systematically classify/group task prompts by linguistic complexity?
 The optimal clustering solution (silhouette method) yielded three distinct task groups.
-Group 1 is the most common across all corpora.
-Group 0 appears with moderate frequency.
-Group 2 is the least represented and consists exclusively of prompts from the Italian corpus.
+•	Group 2 = Highest complexity: longer prompts, more clauses, higher lexical diversity.
+•	Group 0 = Intermediate: moderate length, average syntactic depth, some lexical richness.
+•	Group 1 = Lowest: short prompts, simple syntax, limited vocabulary.
 
-2. Linguistic profiles
-Group 2 exhibits the highest levels of complexity across all three indicators, particularly in syntactic and lexical dimensions.
-Group 1 represents intermediate complexity across the board.
-Group 0 shows the lowest levels of complexity, making it the simplest task type.
-Groups 1 and 2 overlap in their lexical complexity, but differ in length and syntactic indicators.
+#### RQ2: What types of task prompts are most frequently used across the five L2 Spanish corpora? 
+Task group 1 = 61% the most common across all corpora.
+Task group 2 = 8.4% the least represented and consists exclusively of prompts from the Italian corpus.
+Task group 0 = 30.6% (LLC & CEDEL2) appears with moderate frequency.
 
-## Discussion & Conclusion
-This study demonstrates that task prompts in L2 Spanish corpora exhibit measurable linguistic variation and can be meaningfully grouped based on their complexity profiles. These findings highlight:
-- A lack of standardization in task design across corpora.
-- The potential impact of task formulation on learner output, particularly in relation to syntactic and lexical demands.
-- The importance of transparency and metadata documentation in corpus-based writing task design.
+#### RQ3: How does the linguistic complexity of task prompts vary across different task groups? (a demo, work-in-progress)
+By analyzing the mean and standard deviation of key features, I found:
+•	Lexical complexity: All groups showed similar lexical density and average word length, but Group 0 and Group 2 had much higher MTLD values than Group 1, indicating greater lexical diversity. However, Group 0 displayed the highest variability, suggesting inconsistent task prompt across proficiency levels.
+•	Syntactic complexity: Group 2 consistently outperformed the others in clause density, subordination, and dependency distance, with low variability, indicating uniform use of complex structures. In contrast, Group 1 showed the simplest syntax, while Group 0 showed moderate complexity but high variability, pointing to uneven task engagement or learner proficiency.
+These results validate the clustering and provide insight into the linguistic demands of each task group.
 
-Future research may explore how these task types correlate with learner performance, or how register and discourse function interact with linguistic complexity in task prompts.
+## Conclusions and Future directions
+#### Main Findings
+•	Task prompts can be meaningfully grouped into high, intermediate, and low linguistic complexity levels.
+•	The simplest tasks (Group 1) are also the most used in L2 Spanish corpus compilation.
+•	Groups 0 and 2 show richer vocabulary and more complex syntax.
+•	Group 0 is more variable, likely reflecting tasks targeted to specific proficiency levels.
+
+#### Limitations
+•	There’s a lack of standardization in task design across corpora.
+•	This highlights the importance of metadata transparency for future corpus-based studies.
+•	The sample size is relatively limited, so more data are needed to generalize the results.
+•	The spaCy lg model is efficient but not always accurate, so some errors in tagging persist.
+
+#### Future Directions
+•	Link these task types to actual learner written performance to explore how complexity affects output.
+•	Conduct qualitative analyses of individual prompts (e.g., lexical choices, sentence structures) to complement PCA findings.
+•	Expand the dataset with more corpora and task types for greater generalizability.
+•	Investigate how register or genre (e.g., informal letters, academic writing) relates to linguistic complexity in prompts.
+•	Test more advanced NLP tools, like spaCy’s transformer model, for improved annotation accuracy.
+
 
 ## Repository Structure
 sources/    → Original and translated task prompts + metadata + corrected POS labels  
@@ -63,6 +82,6 @@ output/     → Processed data, feature counts, PCA results, cluster assignments
 scripts/    → Python code for processing, feature extraction, statistical analysis, visualization  
 
 ## CONTACT
-- Author: Thuy Huong Nguyen; 
+- Author PhD candidate: Thuy Huong Nguyen; 
 Affiliation: Universidad de Granada;
 Email: huong.traductora@gmail.com
